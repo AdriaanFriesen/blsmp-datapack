@@ -1,0 +1,41 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:add_velocity",
+                "space": "local",
+                "z": -1.7
+            },
+            {
+                "type": "origins:explode",
+                "power": 3,
+                "destruction_type": "none",
+                "damage_self": false,
+                "create_fire": false
+            },
+            {
+                "type": "origins:exhaust",
+                "amount": 1.5
+            },
+            {
+                "type": "origins:set_fall_distance",
+                "fall_distance": 0
+            }
+        ]
+    },
+    "cooldown": 60,
+    "hud_render": {
+        "should_render": true
+    },
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "condition": {
+        "type": "origins:on_block",
+        "inverted": true
+    },
+    "name": "Sugar Repulsors",
+    "description": "Also using the energy from your bloodstream, these provide an impulse in the opposite direction you are facing. Must be off the ground to function."
+}

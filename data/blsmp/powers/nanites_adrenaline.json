@@ -1,0 +1,68 @@
+{
+    "type": "origins:multiple",
+    "timer_init": {
+        "type": "origins:resource",
+        "hud_render": {
+            "should_render": false
+        },
+        "min": 0,
+        "max": 80
+    },
+    "timer_decrease": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "blsmp:nanites_adrenaline_timer_init",
+            "change": -1
+        },
+        "interval": 1
+    },
+    "timer_set": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "blsmp:nanites_adrenaline_timer_init",
+            "operation": "set",
+            "change": 80
+        },
+        "cooldown": 400,
+        "hud_render": {
+            "should_render": true
+        },
+        "key": {
+            "key": "key.origins.ternary_active"
+        }
+    },
+    "adrenaline_buffs": {
+        "type": "origins:conditioned_attribute",
+        "modifiers": [
+            {
+                "attribute": "minecraft:generic.movement_speed",
+                "operation": "addition",
+                "value": 0.14
+            },
+            {
+                "attribute": "minecraft:generic.attack_speed",
+                "operation": "multiply_total",
+                "value": 0.5
+            },
+            {
+                "attribute": "minecraft:generic.attack_damage",
+                "operation": "multiply_total",
+                "value": 0.2
+            },
+            {
+                "attribute": "minecraft:generic.armor",
+                "operation": "addition",
+                "value": 8
+            }
+        ],
+        "tick_rate": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "blsmp:nanites_adrenaline_timer_init",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    }
+}

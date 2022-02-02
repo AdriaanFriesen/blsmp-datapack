@@ -1,0 +1,33 @@
+{
+    "type": "origins:multiple",
+    "healing": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 1
+        },
+        "interval": 20
+    },
+    "effect_immunity": {
+        "type": "origins:effect_immunity",
+        "effects": [
+            "cenchants:antiheal",
+            "cenchants:delayed_death",
+            "cenchants:sleepy",
+            "darkwaters:storm_darkness",
+            "minecraft:blindness",
+            "minecraft:hunger",
+            "minecraft:instant_damage",
+            "minecraft:levitation",
+            "minecraft:mining_fatigue",
+            "minecraft:nausea",
+            "minecraft:poison",
+            "minecraft:unluck",
+            "minecraft:weakness",
+            "minecraft:wither",
+            "neutrino:snake_poison"
+        ]
+    },
+    "name": "Nanites: Healing",
+    "description": "Acting like a hyper efficient immune system, your nanites repair damage slowly as well as prevent any harm from effects."
+}

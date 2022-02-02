@@ -1,0 +1,34 @@
+{   
+    "type": "origins:multiple",
+    "no_ender_pearls": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient" :{
+                "item": "minecraft:ender_pearl"
+            }
+        }
+    },
+    "magic_damage_multiplier": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "magic"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "indirectMagic"
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "multiply_total",
+            "value": "1"
+        }
+    },
+    "name": "Magic Averseness",
+    "description": "Being specialized in tech magic does extra damage to you."
+}

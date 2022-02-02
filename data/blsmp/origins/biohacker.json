@@ -1,0 +1,18 @@
+{
+	"powers": [
+		"blsmp:glucose_jetpack",
+		"blsmp:sugar_repulsors",
+		"blsmp:nanites_healing",
+		"blsmp:nanites_adrenaline",
+		"blsmp:reduced_armor",
+		"blsmp:magic_averseness",
+		"blsmp:toggleprimary"
+	],
+	"icon": {
+		"item": "minecraft:amethyst_shard"
+	},
+	"order": 0,
+	"impact": 1,
+	"name": "Biohacker",
+	"description": "Improves their body through additions and modifications."
+}

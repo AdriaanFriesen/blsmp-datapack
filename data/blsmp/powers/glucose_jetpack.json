@@ -1,0 +1,198 @@
+{	
+	"type": "origins:multiple",
+	"elytra_propulsion": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:add_velocity",
+					"space": "local",
+					"x": 0,
+					"y": 0,
+					"z": 0.2,
+					"client": false
+				},
+				{
+					"type": "origins:exhaust",
+					"amount": 0.1
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute anchored feet run particle minecraft:flame ~ ~ ~ 0.1 0.1 0.1 0.02 4 force"
+				}
+			]
+		},
+		"key": {
+			"key": "key.jump",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "blsmp:toggleprimary"
+				},
+				{
+					"type": "origins:elytra_flight_possible",
+					"check_state": false,
+					"check_abilities": true
+				},
+				{
+					"type": "origins:elytra_flight_possible",
+					"check_state": true,
+					"check_abilities": false,
+					"inverted": true
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"creative_flight": {
+		"type": "origins:creative_flight",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "blsmp:toggleprimary"
+				},
+				{
+					"type": "origins:elytra_flight_possible",
+					"check_state": false,
+					"check_abilities": true,
+					"inverted": true
+				}
+			]
+		}
+	},
+	"exhaustion": {
+		"type": "origins:exhaust",
+		"interval": 1,
+		"exhaustion": 0.02,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "blsmp:toggleprimary"
+				},
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:elytra_flight_possible",
+							"check_state": true,
+							"check_abilities": false
+						},
+						{
+							"type": "origins:elytra_flight_possible",
+							"check_state": false,
+							"check_abilities": true,
+							"inverted": true
+						}
+					]
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"negate_fall_damage": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:set_fall_distance",
+			"fall_distance": 0
+		},
+		"interval": 1,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "blsmp:toggleprimary"
+				},
+				{
+					"type": "origins:elytra_flight_possible",
+					"check_state": true,
+					"check_abilities": false
+				}
+			]
+		}
+	},
+	"exhaustion_sprinting": {
+		"type": "origins:exhaust",
+		"interval": 1,
+		"exhaustion": 0.02,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "blsmp:toggleprimary"
+				},
+				{
+					"type": "origins:sprinting"
+				},
+				{
+					"type": "origins:elytra_flight_possible",
+					"check_state": false,
+					"check_abilities": true,
+					"inverted": true
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:creative_flying"
+				}
+			]
+		}
+	},
+	"particles": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute anchored feet run particle minecraft:flame ~ ~ ~ 0.1 0.1 0.1 0.02 1 force"
+		},
+		"interval": 1,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "blsmp:toggleprimary"
+				},
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:elytra_flight_possible",
+							"check_state": true,
+							"check_abilities": false
+						},
+						{
+							"type": "origins:elytra_flight_possible",
+							"check_state": false,
+							"check_abilities": true,
+							"inverted": true
+						}
+					]
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"name": "Glucose Powered Jetpack",
+	"description": "First converting glucose in your bloodstream to cyclobutane, then using it as fuel to provide propulsion, it allows you to fly."
+}
